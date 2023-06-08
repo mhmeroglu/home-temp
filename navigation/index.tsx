@@ -11,6 +11,8 @@ import Colors from "../constants/Colors";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import Welcome from "../screens/WelcomeScreen";
+import Home from "../screens/HomeScreen";
+import Room from "../screens/RoomScreen";
 
 import { RootStackParamList } from "../types";
 
@@ -24,9 +26,9 @@ const theme = {
 
 export default function Navigation() {
   return (
-    <NavigationContainer theme={theme}>
-      <RootNavigator />
-    </NavigationContainer>
+      <NavigationContainer theme={theme}>
+        <RootNavigator />
+      </NavigationContainer>
   );
 }
 
@@ -38,14 +40,16 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Register" component={RegisterScreen} />
-    </Stack.Navigator>
+      <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+      >
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Room" component={Room} />
+      </Stack.Navigator>
   );
 }
